@@ -1,4 +1,4 @@
-FROM node:16.17.0-alpine AS prebuilder
+FROM node:18.12.1-alpine AS prebuilder
 
 WORKDIR /app
 
@@ -11,7 +11,7 @@ RUN set -eux; \
     npm run prebuild
 
 
-FROM node:16.17.0-alpine AS node-kerberos
+FROM node:18.12.1-alpine AS node-kerberos
 
 WORKDIR /app
 
