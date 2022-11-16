@@ -25,7 +25,8 @@ COPY --from=prebuilder /app/kerberos/prebuilds/*.tar.gz /root/.npm/_prebuilds/
 
 RUN set -eux; \
     apk add krb5 krb5-libs vim curl; \
-    npm config set kerberos_local_prebuilds=/root/.npm/_prebuilds
+    npm config set kerberos_local_prebuilds=/root/.npm/_prebuilds; \
+    npm install -g node-gyp
 
 RUN apk update && apk add bash
 
